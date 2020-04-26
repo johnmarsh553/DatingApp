@@ -59,7 +59,7 @@ namespace DatingApp.Api.Data
 
         public async Task<bool> UserExists(string username)
         {
-           if(await _context.Users.AnyAsync(x.username == username))
+           if(await _context.Users.AnyAsync(x=>x.UserName == username))
             return true;
 
            return false;
